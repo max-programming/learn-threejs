@@ -2,11 +2,12 @@ import "./style.css";
 import * as THREE from "three";
 // import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import * as dat from "dat.gui";
+import textureImg from "/textures/NormalMap.png";
 
 // Loading
 const textureLoader = new THREE.TextureLoader();
 
-const normalTexture = textureLoader.load("/textures/NormalMap.png");
+const normalTexture = textureLoader.load(textureImg);
 
 // Debug
 const gui = new dat.GUI();
@@ -147,7 +148,7 @@ const onDocumentMouseMove = (ev: MouseEvent) => {
   mouseY = ev.clientY - windowY;
 };
 
-const updateSphere = (ev: Event) => {
+const updateSphere = () => {
   sphere.position.y = window.scrollY * 0.001;
 };
 
